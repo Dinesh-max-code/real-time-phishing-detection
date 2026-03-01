@@ -3,10 +3,11 @@ uvicorn
 pandas
 numpy
 scikit-learn
+lightgbm
 xgboost
 requests
 tldextract
 joblib
 shap
 python-whois
-Flask
+flask

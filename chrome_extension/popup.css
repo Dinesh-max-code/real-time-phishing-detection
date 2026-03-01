@@ -1,0 +1,272 @@
+/* ===============================
+   ROOT / WINDOW (CHROME-LIKE)
+================================ */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 340px;
+  background: #2f3136;
+  border-radius: 18px;
+  overflow: hidden;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/* ===============================
+   MAIN CARD
+================================ */
+.container {
+  margin: 10px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+/* ===============================
+   TOP BANNER
+================================ */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+  border-radius: 16px 16px 10px 10px;
+}
+
+.banner.safe {
+  background: #4b5563;
+}
+
+.banner.suspicious {
+  background: #f59e0b;
+}
+
+.banner.phishing {
+  background: #dc2626;
+}
+
+/* ===============================
+   SEVERITY BADGE
+================================ */
+.severity {
+  margin: 10px 16px 0;
+  padding: 8px 14px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 12px;
+  border: 1px solid;
+}
+
+.severity.low {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+
+.severity.low::before {
+  content: "✔";
+  margin-right: 6px;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+
+.severity.medium {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.severity.high {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
+.section {
+  padding: 12px 18px;
+}
+
+.section + .section {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===============================
+   LABELS
+================================ */
+.label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ===============================
+   VALUES / TEXT
+================================ */
+.value {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #1f2937;
+  word-break: break-all;
+}
+
+/* ===============================
+   RISK SCORE
+================================ */
+.risk-score {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.percent {
+  font-size: 13px;
+  margin-left: 2px;
+}
+
+.risk-scale {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ===============================
+   REASONS LIST
+================================ */
+.reasons-list {
+  padding-left: 18px;
+  margin-top: 8px;
+  max-height: 72px;
+  overflow-y: auto;
+}
+
+.reasons-list li {
+  font-size: 12.5px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* ===============================
+   ACTION CARD
+================================ */
+.action-section {
+  margin: 12px 16px 16px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+#action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+button {
+  padding: 9px 16px;
+  border-radius: 12px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#leave-btn {
+  background: #dc2626;
+  color: white;
+}
+
+#continue-btn {
+  background: #2563eb;
+  color: white;
+}
+
+#continue-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   REMEMBER CHECKBOX
+================================ */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #374151;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ===============================
+   TRUST EXPIRY WARNING
+================================ */
+.expiry-warning {
+  margin: 8px 14px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: #fff7ed;       /* soft amber */
+  color: #92400e;            /* dark amber text */
+  border: 1px solid #fed7aa;
+  text-align: center;
+}
+/* ===============================
+   PROJECT WEBSITE BUTTON
+================================ */
+
+.project-btn {
+  width: 100%;
+  padding: 10px;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.project-btn:hover {
+  background: #1f2937;
+}

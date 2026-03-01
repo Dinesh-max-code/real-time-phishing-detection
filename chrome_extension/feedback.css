@@ -1,0 +1,337 @@
+/* =====================================================
+   GLOBAL THEME
+   ===================================================== */
+
+:root {
+  --bg-main: #0b1220;
+  --bg-panel: #020617;
+  --bg-panel-soft: #020617cc;
+
+  --border-subtle: #1e293b;
+
+  --text-primary: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  --blue: #2563eb;
+  --blue-soft: #1e40af;
+
+  --green: #22c55e;
+  --amber: #facc15;
+  --red: #ef4444;
+
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #020617, #0b1220);
+  color: var(--text-primary);
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 28px 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   KPI STATS
+   ===================================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px 0 24px;
+}
+
+.card {
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.card span {
+  display: block;
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card.green span {
+  color: var(--green);
+}
+
+.card.red span {
+  color: var(--red);
+}
+
+/* =====================================================
+   FILTER BAR
+   ===================================================== */
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select {
+  flex: 1;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  color: var(--text-primary);
+}
+
+.filters select {
+  max-width: 200px;
+}
+
+.filters button {
+  background: var(--blue);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background: var(--blue-soft);
+}
+
+/* =====================================================
+   ACTION BUTTONS
+   ===================================================== */
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.actions button {
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  filter: brightness(1.1);
+}
+
+/* =====================================================
+   FEEDBACK LIST
+   ===================================================== */
+
+.list .item {
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  transition: border 0.2s ease;
+}
+
+.list .item:hover {
+  border-color: #334155;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.url {
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.safe {
+  background: #1e293b;
+}
+
+.badge.suspicious {
+  background: var(--amber);
+  color: #000;
+}
+
+.badge.phishing {
+  background: var(--red);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.good {
+  color: var(--green);
+}
+
+.bad {
+  color: var(--red);
+}
+
+.comment {
+  margin-top: 10px;
+  padding-left: 12px;
+  border-left: 3px solid var(--border-subtle);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   ANALYTICS
+   ===================================================== */
+
+#accuracyStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+#domainStats .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =====================================================
+   DANGER ZONE
+   ===================================================== */
+
+.danger {
+  color: var(--red);
+}
+
+.danger-btn {
+  width: 100%;
+  background: linear-gradient(180deg, #dc2626, #b91c1c);
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* =====================================================
+   LOGIN SCREEN (ADMIN)
+   ===================================================== */
+
+.center-box {
+  max-width: 360px;
+  margin: 140px auto;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.center-box input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background: #020617;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+
+  /* 🔥 CRITICAL FIX */
+  color: #e5e7eb !important;        /* visible text */
+  caret-color: #e5e7eb !important; /* visible cursor */
+  -webkit-text-fill-color: #e5e7eb !important;
+}
+
+
+.center-box button {
+  margin-top: 14px;
+  width: 100%;
+  padding: 10px;
+  background: var(--blue);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+}
+
+.center-box button:hover {
+  background: var(--blue-soft);
+}
+
+.error {
+  margin-top: 8px;
+  color: var(--red);
+}
+
+/* =====================================================
+   UTILITIES
+   ===================================================== */
+
+.hidden {
+  display: none;
+}
+/* =====================================================
+   🔐 FIX: PASSWORD INPUT NOT ACCEPTING TYPING
+   ===================================================== */
+
+#loginContainer {
+  position: relative;
+  z-index: 9999;
+}
+
+#adminPassword {
+  pointer-events: auto !important;
+  user-select: text !important;
+  z-index: 10000;
+  position: relative;
+  background: #020617;
+  color: var(--text-primary);
+}

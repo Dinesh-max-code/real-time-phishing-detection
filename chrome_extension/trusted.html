@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Trusted Sites</title>
+  <link rel="stylesheet" href="trusted.css" />
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+      <h1>Trusted Websites</h1>
+      <p class="subtitle">
+        These websites were temporarily allowed after you chose to proceed.
+        Protection will automatically resume after expiry.
+      </p>
+<div class="controls">
+      <input
+      type="text"
+      id="search-box"
+     placeholder="Search trusted domains..." />
+
+  <select id="filter-select">
+    <option value="all">All</option>
+    <option value="expiring">Expiring soon (≤ 24h)</option>
+    <option value="long">Long-term trust (≥ 7 days)</option>
+  </select>
+</div>
+
+
+      <ul id="site-list"></ul>
+
+      <div id="empty" class="empty">
+        ✅ No trusted websites added yet.
+      </div>
+    </div>
+  </div>
+
+  <script src="trusted.js"></script>
+</body>
+</html>

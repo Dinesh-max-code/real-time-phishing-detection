@@ -1,0 +1,15 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Dataset (if large)
+*.csv
+*.zip
+
+# Model checkpoints (optional if large)
+*.pkl
+
+# OS files
+.DS_Store
+Thumbs.db

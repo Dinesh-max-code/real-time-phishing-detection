@@ -1,0 +1,226 @@
+/* =====================================================
+   ROOT THEME VARIABLES
+   ===================================================== */
+:root {
+  --bg-main: #020617;
+  --bg-card: #0b1220;
+
+  --border-soft: #1e293b;
+  --border-strong: #334155;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #cbd5f5;
+  --text-muted: #94a3b8;
+
+  --blue: #3b82f6;
+  --blue-soft: #1e3a8a;
+
+  --green: #22c55e;
+  --green-soft: #052e16;
+
+  --red: #ef4444;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+/* =====================================================
+   PAGE BASE
+   ===================================================== */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background: radial-gradient(
+    circle at top,
+    #0f172a,
+    #020617 70%
+  );
+  color: var(--text-primary);
+}
+
+/* =====================================================
+   CENTER LAYOUT
+   ===================================================== */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =====================================================
+   MAIN CARD
+   ===================================================== */
+.card {
+  background: linear-gradient(180deg, #0b1220, #020617);
+  width: 480px;
+  max-width: 92%;
+  padding: 26px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.55),
+    0 4px 14px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-soft);
+}
+
+/* =====================================================
+   HEADERS
+   ===================================================== */
+h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   SEARCH & FILTER CONTROLS
+   ===================================================== */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+#search-box,
+#filter-select {
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  font-size: 14px;
+  background: #020617;
+  color: var(--text-primary);
+  outline: none;
+}
+
+#search-box {
+  flex: 1;
+}
+
+#search-box::placeholder {
+  color: var(--text-muted);
+}
+
+#search-box:focus,
+#filter-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+/* =====================================================
+   LIST BASE
+   ===================================================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* =====================================================
+   TRUSTED SITE ITEM
+   ===================================================== */
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-soft);
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  border-color: var(--blue);
+  background: #020617;
+}
+
+/* =====================================================
+   SITE INFO (LEFT)
+   ===================================================== */
+.site-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.domain {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   TRUST INDICATOR
+   ===================================================== */
+li::before {
+  content: "✔";
+  color: var(--green);
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+/* =====================================================
+   REMOVE BUTTON
+   ===================================================== */
+button {
+  background: linear-gradient(180deg, #ef4444, #b91c1c);
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+.empty {
+  text-align: center;
+  padding: 26px 12px;
+  font-size: 14px;
+  color: #86efac;
+  background: var(--green-soft);
+  border-radius: var(--radius-md);
+  border: 1px dashed #16a34a;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}

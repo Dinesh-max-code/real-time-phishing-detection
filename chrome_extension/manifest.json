@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Detector",
+  "version": "1.0",
+  "description": "Real-time phishing detection using ML + heuristics",
+
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": ["<all_urls>", "http://127.0.0.1:8000/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/green.png",
+      "48": "icons/green.png",
+      "128": "icons/green.png"
+    }
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["trusted.html", "trusted.js", "trusted.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

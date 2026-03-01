@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Feedback Dashboard</title>
+  <link rel="stylesheet" href="feedback.css" />
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginContainer" class="center-box">
+  <h2>🔐 Admin Access</h2>
+  <input type="password" id="adminPassword" placeholder="Enter admin password" />
+  <button id="loginBtn">Login</button>
+  <p id="loginError" class="error hidden">Invalid password</p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboardContainer" class="hidden">
+
+  <h1>📊 Feedback Dashboard</h1>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="card">Total<br><span id="totalCount">0</span></div>
+    <div class="card green">Helpful<br><span id="helpfulCount">0</span></div>
+    <div class="card red">Not Helpful<br><span id="notHelpfulCount">0</span></div>
+    <div class="card">Explicit Helpful %<br><span id="helpfulPercent">0%</span></div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <input type="text" id="urlFilter" placeholder="Filter by URL" />
+    <select id="statusFilter">
+      <option value="">All Status</option>
+      <option value="safe">Safe</option>
+      <option value="suspicious">Suspicious</option>
+      <option value="phishing">Phishing</option>
+    </select>
+
+    <label class="toggle">
+      <input type="checkbox" id="includeSilent" checked />
+      Include silent feedback
+    </label>
+
+    <button id="clearFilters">Clear</button>
+  </div>
+
+  <!-- EXPORT -->
+  <div class="actions">
+    <button id="exportCSV">⬇ Export CSV</button>
+    <button id="exportJSON">⬇ Export JSON (ML)</button>
+  </div>
+
+  <!-- ANALYTICS -->
+  <h2>📈 Accuracy by Status</h2>
+  <div id="accuracyStats" class="stats"></div>
+
+  <h2>🌐 Top Domains (Possible False Positives)</h2>
+  <div id="domainStats" class="list"></div>
+
+  <!-- DANGER -->
+  <h2 class="danger">⚠ Danger Zone</h2>
+  <button id="clearAll" class="danger-btn">Clear All Feedback</button>
+
+  <!-- FEEDBACK LIST -->
+  <div id="feedbackList" class="list"></div>
+
+</div>
+
+<script src="feedback.js"></script>
+</body>
+</html>
